@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "practice",
+            "group": "SC",
+            "database": "E:\\Sync\\JJU\\SC - Projects\\DAP 2022-10\\practice.sqlite"
+        }
+    ]
+}
