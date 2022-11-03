@@ -12,7 +12,11 @@ The scripts in this repo will change frequently. Sometimes as a class is in sess
 
 ## Table of contents
 
-### 3.1
+### Section 3 - Courses, Students and Grades
+
+These files are in the section 3 folder.
+
+#### 3.1
 - Create tables, insert records, edit and delete
 - departments.sql - contains scripts for the departments table
 - subjects.sql
@@ -22,4 +26,8 @@ The scripts in this repo will change frequently. Sometimes as a class is in sess
 ### 3.2
 - filtering - an exploration of the where clause
 - sorting - an exploration of the order by clause
+
+### Section 4 - Medicare drug pricing
+
+These files are in the section 4 folder.
 
