@@ -1,379 +1,308 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="E:/Users/JUnger.NP/Repos/DAP-SQL/Section4/cmspdp.sqlite3" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="5098"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,19:mainbasicDrugsFormulary"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="basicDrugsFormulary" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="113"/><column index="2" value="158"/><column index="3" value="193"/><column index="4" value="162"/><column index="5" value="121"/><column index="6" value="134"/><column index="8" value="167"/><column index="9" value="175"/><column index="10" value="245"/><column index="11" value="116"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="planInformation" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="100"/><column index="3" value="66"/><column index="4" value="103"/><column index="5" value="300"/><column index="6" value="300"/><column index="7" value="113"/><column index="8" value="86"/><column index="9" value="100"/><column index="10" value="52"/><column index="11" value="52"/><column index="12" value="223"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="planInformationLocation" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="66"/><column index="2" value="139"/><column index="3" value="146"/><column index="4" value="96"/><column index="5" value="112"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_bcf_202210" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="134"/><column index="2" value="88"/><column index="3" value="124"/><column index="4" value="164"/><column index="5" value="52"/><column index="6" value="135"/><column index="7" value="162"/><column index="8" value="157"/><column index="9" value="204"/><column index="10" value="207"/><column index="11" value="201"/><column index="12" value="196"/><column index="13" value="243"/><column index="14" value="246"/><column index="15" value="218"/><column index="16" value="213"/><column index="17" value="260"/><column index="18" value="263"/><column index="19" value="257"/><column index="20" value="252"/><column index="21" value="299"/><column index="22" value="300"/><column index="23" value="190"/><column index="24" value="165"/><column index="25" value="143"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_bdf_202210" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="150"/><column index="2" value="207"/><column index="3" value="158"/><column index="4" value="70"/><column index="5" value="106"/><column index="6" value="179"/><column index="7" value="197"/><column index="8" value="249"/><column index="9" value="220"/><column index="10" value="260"/><column index="11" value="177"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_pi_202210" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="134"/><column index="2" value="88"/><column index="3" value="124"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="150"/><column index="7" value="94"/><column index="8" value="120"/><column index="9" value="52"/><column index="10" value="175"/><column index="11" value="183"/><column index="12" value="63"/><column index="13" value="139"/><column index="14" value="52"/><column index="15" value="215"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Plan Information">-- Create normalized plan tables and translate the staged data
-
-drop table planInformation;
-drop table planInformationLocation;
-
-CREATE TABLE planInformation (
-	Id INTEGER PRIMARY KEY
-	,contractId char(5)
-	,planId char(3)
-	,segmentId char(3)
-	,contractName TEXT
-	,planName TEXT
-	,formularyId char(8)
-	,premium decimal(12,4)
-	,deductible decimal(12,4)
-	,icl decimal(12,4)
-	,snp char(1)
-	,pharmacyDataSupressed char(1)
-	);
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="E:/Cloud Sync/Dropbox/DAP-SQL/cmspdp.sqlite3" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="5098"/><column_width id="4" width="0"/><expanded_item id="0" parent="2"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,23:mainplanInformationLocation"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="basicDrugsFormulary" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="113"/><column index="2" value="158"/><column index="3" value="193"/><column index="4" value="162"/><column index="5" value="121"/><column index="6" value="134"/><column index="8" value="167"/><column index="9" value="175"/><column index="10" value="245"/><column index="11" value="116"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="beneficiarycost" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="170"/><column index="3" value="100"/><column index="4" value="66"/><column index="5" value="103"/><column index="6" value="133"/><column index="7" value="52"/><column index="8" value="109"/><column index="9" value="122"/><column index="10" value="116"/><column index="11" value="167"/><column index="12" value="181"/><column index="13" value="147"/><column index="14" value="151"/><column index="15" value="157"/><column index="16" value="151"/><column index="17" value="202"/><column index="18" value="216"/><column index="19" value="182"/><column index="20" value="186"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="planInformation" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="100"/><column index="3" value="66"/><column index="4" value="103"/><column index="5" value="300"/><column index="6" value="300"/><column index="7" value="113"/><column index="8" value="86"/><column index="9" value="100"/><column index="10" value="52"/><column index="11" value="52"/><column index="12" value="223"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="planInformationLocation" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="66"/><column index="2" value="139"/><column index="3" value="146"/><column index="4" value="96"/><column index="5" value="112"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="productPackageNDC" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="52"/><column index="2" value="106"/><column index="3" value="300"/><column index="4" value="114"/><column index="5" value="300"/><column index="6" value="300"/><column index="7" value="230"/><column index="8" value="275"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_ProductPackageNDC" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="106"/><column index="2" value="300"/><column index="3" value="114"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="230"/><column index="7" value="275"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_bcf_202210" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="134"/><column index="2" value="88"/><column index="3" value="124"/><column index="4" value="164"/><column index="5" value="52"/><column index="6" value="135"/><column index="7" value="162"/><column index="8" value="157"/><column index="9" value="204"/><column index="10" value="207"/><column index="11" value="201"/><column index="12" value="196"/><column index="13" value="243"/><column index="14" value="246"/><column index="15" value="218"/><column index="16" value="213"/><column index="17" value="260"/><column index="18" value="263"/><column index="19" value="257"/><column index="20" value="252"/><column index="21" value="299"/><column index="22" value="300"/><column index="23" value="190"/><column index="24" value="165"/><column index="25" value="143"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_bdf_202210" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="150"/><column index="2" value="207"/><column index="3" value="158"/><column index="4" value="70"/><column index="5" value="106"/><column index="6" value="179"/><column index="7" value="197"/><column index="8" value="249"/><column index="9" value="220"/><column index="10" value="260"/><column index="11" value="177"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="stage_pi_202210" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="134"/><column index="2" value="88"/><column index="3" value="124"/><column index="4" value="300"/><column index="5" value="300"/><column index="6" value="150"/><column index="7" value="94"/><column index="8" value="120"/><column index="9" value="52"/><column index="10" value="175"/><column index="11" value="183"/><column index="12" value="63"/><column index="13" value="139"/><column index="14" value="52"/><column index="15" value="215"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="Plan Information">-- Create normalized plan tables and translate the staged data
 
-CREATE TABLE planInformationLocation (
-	planId INTEGER NOT NULL
-	,maRegionCode char(2)
-	,pdpRegionCode char(2)
-	,stateCode char(2)
-	,countyCode char(5)
-	);
-	
-insert into planInformation (
-	contractId
-	,planId
-	,segmentId
-	,contractName
-	,planName
-	,formularyId
-	,premium
-	,deductible
-	,icl
-    ,snp
-	,pharmacyDataSupressed
-	)
-select distinct 
-	CONTRACT_ID
-	,PLAN_ID
-	,SEGMENT_ID
-	,CONTRACT_NAME
-	,PLAN_NAME
-	,FORMULARY_ID
-	,PREMIUM
-	,DEDUCTIBLE
-	,ICL
-    ,SNP
-	,PLAN_SUPPRESSED_YN
-	from stage_pi_202210;
-	
-insert into planInformationLocation (
-	planId
-	, maRegionCode
-	, pdpRegionCode
-	, stateCode
-	, countyCode
-	)
-select p.id
-	,ps.MA_REGION_CODE
-	,ps.PDP_REGION_CODE
-	,ps.STATE
-	,ps.COUNTY_CODE
-	from stage_pi_202210 ps
-		inner join planInformation p
-			on ps.CONTRACT_ID = p.contractId
-			and ps.PLAN_ID = p.planId
-			and ps.SEGMENT_ID = p.segmentId;</sql><sql name="Basic Drug Formulary">-- Create the final table and translate the staged data for the formulary data.
-
-drop table basicDrugsFormulary;
-
-CREATE TABLE basicDrugsFormulary (
-	id INTEGER PRIMARY KEY,
-	formularyId VARCHAR(8),
-	formularyVersion VARCHAR(5),
-	contractYear INT(10),
-	rxcui VARCHAR(8),
-	ndc VARCHAR(11),
-	tierLevel INT(10),
-	quantityLimit DECIMAL(18,4),
-	quantityLimitDays DECIMAL(18,4),
-	quantityLimitExists char(1),
-	priorAuthorizationRequired char(1),
-	stepTherapy char(1)
-	);
-
-INSERT INTO basicDrugsFormulary
-(
-    FormularyId
-  , FormularyVersion
-  , ContractYear
-  , RXCUI
-  , NDC
-  , TierLevel
-  , QuantityLimit
-  , QuantityLimitDays
-  , QuantityLimitExists
-  , PriorAuthorizationRequired
-  , StepTherapy
-)
-SELECT bdf.FORMULARY_ID
-     , bdf.FORMULARY_VERSION
-     , bdf.CONTRACT_YEAR
-     , bdf.RXCUI
-     , bdf.NDC
-     , bdf.TIER_LEVEL_VALUE
-     , bdf.QUANTITY_LIMIT_YN
-     , bdf.QUANTITY_LIMIT_AMOUNT
-     , bdf.QUANTITY_LIMIT_DAYS
-     , bdf.PRIOR_AUTHORIZATION_YN
-     , bdf.STEP_THERAPY_YN 
-	FROM stage_bdf_202210 AS bdf;
-
-create index bdf_formularyId on basicDrugsFormulary(formularyId);	</sql><sql name="Beneficiary Cost">-- This is the most complicated of the files we will examine.
--- Please refer to the data definition spreadsheet for details.
-
-create table beneficiarycost(
-	id Integer Primary Key,
-	planInformationId int,
-	contractId char(5),
-	planId char(3),
-	segmentId char(3),
-	coverageLevel varchar(25),
-	tier int,
-	daysSupply int,
-	costTypePref varchar(25),
-	costAmtPref numeric(18, 4),
-	costAmtPrefDollar numeric(18, 4),
-	costAmtPrefPercent numeric(18, 4),
-	costMinAmtPref varchar(12),
-	costMaxAmtPref numeric(18, 4),
-	costTypeNonpref varchar(25),
-	costAmtNonpref numeric(18, 4),
-	costAmtNonprefDollar numeric(18, 4),
-	costAmtNonprefPercent numeric(18, 4),
-	costMinAmtNonpref varchar(12),
-	costMaxAmtNonpref numeric(18, 4)
-	);
-	
-INSERT INTO beneficiarycost (
-	planInformationId,
-	contractId,
-	planId,
-	segmentId,
-	coverageLevel,
-	tier,
-	daysSupply,
-	costTypePref,
-	costAmtPref,
-	costAmtPrefDollar,
-	costAmtPrefPercent,
-	costMinAmtPref,
-	costMaxAmtPref,
-	costTypeNonpref,
-	costAmtNonpref,
-	costAmtNonprefDollar,
-	costAmtNonprefPercent,
-	costMinAmtNonpref,
-	costMaxAmtNonpref
-	)
-SELECT
-	p.id as planInformationId
-	--Coverage type for beneficiary with no subsidy.
-	--0=pre-deductible,
-	--1=initial coverage,
-	--2=coverage gap,
-	--3=catastrophic
-	,b.CONTRACT_ID
-	,b.PLAN_ID
-	,b.SEGMENT_ID
-	,case b.COVERAGE_LEVEL  when '0' then 'pre-deductible'
-		when '1' then 'initial coverage'
-			when '2' then 'coverage gap'
-			when '3' then 'catastrophic'
-			else 'Not mapped'
-			end as coverage_level
-	,tier
-	--Length of days supply to which cost structure applies.
-	--1=30 days,
-	--2=90 days,
-	--3=other,
-	--4=60 days
-	,case DAYS_SUPPLY when '1' then 30
-		when '2' then 90
-		when '3' then -1 -- This is other - can't calculate
-		when '4' then 60
-		else -2 -- This is unmapped
-		end as days_supply
-	--Type of cost sharing at preferred pharmacies.
-	--0=not offered,
-	--1=copay
-	--2=coinsurance
-	,case cost_type_pref when '0' then 'not offered'
-		when '1' then 'copay'
-		when '2' then 'coinsurance'
-		else 'Not mapped:' || cost_type_pref
-		end as cost_type_pref
-	--Amount of cost sharing at preferred pharmacies. 
-	--If COST_TYPE_PREF=1, this field is interpreted as $$$$cc 
-	-- for example, 2.65 is interpreted as $2.65. 
-	--If COST_TYPE_PREF=2, this field is interpreted as a 2-decimal-place number 
-	-- for example, .25 is interpreted as 25%
-	,case cost_type_pref when '0' then -99 --Not offered
-		when '1' then cost_amt_pref
-		when '2' then cost_amt_pref
-		else -98 --Not mapped
-		end as cost_amt_pref
-	,case cost_type_pref when '1' then cost_amt_pref
-		else null
-		end as cost_amt_pref_dollar
-	,case cost_type_pref when '2' then cost_amt_pref
-		else null
-		end as cost_amt_pref_percent
-	--Minimum cost sharing at preferred pharmacies. 
-	--For COVERAGE_LEVEL=3 (catastrophic phase),  
-	--cost-sharing for generic drug will be denoted as *;
-	--cost-sharing for brand drug will be denoted as **
-	,case when coverage_level = '3'
-		then case cost_min_amt_pref when '*' then 'generic'
-									when '**' then 'brand'
-									else NULL
-				END
-		else null
-		end as cost_min_amt_pref
-	,cost_max_amt_pref
-	---- nonpref start
-	--Type of cost sharing at preferred pharmacies.
-	--0=not offered,
-	--1=copay
-	--2=coinsurance
-	,case cost_type_nonpref when '0' then 'not offered'
-		when '1' then 'copay'
-		when '2' then 'coinsurance'
-		else 'Not mapped:' || cost_type_nonpref
-		end as cost_type_nonpref
-	--Amount of cost sharing at preferred pharmacies. 
-	--If COST_TYPE_NONPREF=1, this field is interpreted as $$$$cc 
-	-- for example, 2.65 is interpreted as $2.65. 
-	--If COST_TYPE_PREF=2, this field is interpreted as a 2-decimal-place number 
-	-- for example, .25 is interpreted as 25%
-	,case cost_type_nonpref when '0' then -99 --Not offered
-		when '1' then cost_amt_nonpref
-		when '2' then cost_amt_nonpref
-		else -98 --Not mapped
-		end as cost_amt_nonpref
-	,case cost_type_nonpref when '1' then cost_amt_pref
-		else null
-		end as cost_amt_nonpref_dollar
-	,case cost_type_nonpref when '2' then cost_amt_pref
-		else null
-		end as cost_amt_nonpref_percent
-	--Minimum cost sharing at preferred pharmacies. 
-	--For COVERAGE_LEVEL=3 (catastrophic phase),  
-	--cost-sharing for generic drug will be denoted as *;
-	--cost-sharing for brand drug will be denoted as **
-	,case when coverage_level = '3'
-		then case cost_min_amt_nonpref when '*' then 'generic'
-									when '**' then 'brand'
-									else NULL
-				END
-		else null
-		end as cost_min_amt_nonpref
-	,cost_max_amt_nonpref
-	FROM stage_bcf_202210 b
-		inner join planInformation p
-			on b.CONTRACT_ID = p.contractId
-			and b.PLAN_ID = p.planId
-			and b.SEGMENT_ID = p.segmentId</sql><sql name="Scratch Pad">SELECT
-	p.id as planInformationId
-	--Coverage type for beneficiary with no subsidy.
-	--0=pre-deductible,
-	--1=initial coverage,
-	--2=coverage gap,
-	--3=catastrophic
-	,case b.COVERAGE_LEVEL  when '0' then 'pre-deductible'
-		when '1' then 'initial coverage'
-			when '2' then 'coverage gap'
-			when '3' then 'catastrophic'
-			else 'Not mapped'
-			end as coverage_level
-	,tier
-	--Length of days supply to which cost structure applies.
-	--1=30 days,
-	--2=90 days,
-	--3=other,
-	--4=60 days
-	,case DAYS_SUPPLY when '1' then 30
-		when '2' then 90
-		when '3' then -1 -- This is other - can't calculate
-		when '4' then 60
-		else -2 -- This is unmapped
-		end as days_supply
-	--Type of cost sharing at preferred pharmacies.
-	--0=not offered,
-	--1=copay
-	--2=coinsurance
-	,case cost_type_pref when '0' then 'not offered'
-		when '1' then 'copay'
-		when '2' then 'coinsurance'
-		else 'Not mapped:' || cost_type_pref
-		end as cost_type_pref
-	--Amount of cost sharing at preferred pharmacies. 
-	--If COST_TYPE_PREF=1, this field is interpreted as $$$$cc 
-	-- for example, 2.65 is interpreted as $2.65. 
-	--If COST_TYPE_PREF=2, this field is interpreted as a 2-decimal-place number 
-	-- for example, .25 is interpreted as 25%
-	,case cost_type_pref when '0' then -99 --Not offered
-		when '1' then cost_amt_pref
-		when '2' then cost_amt_pref
-		else -98 --Not mapped
-		end as cost_amt_pref
-	,case cost_type_pref when '1' then cost_amt_pref
-		else null
-		end as cost_amt_pref_dollar
-	,case cost_type_pref when '2' then cost_amt_pref
-		else null
-		end as cost_amt_pref_percent
-	--Minimum cost sharing at preferred pharmacies. 
-	--For COVERAGE_LEVEL=3 (catastrophic phase),  
-	--cost-sharing for generic drug will be denoted as *;
-	--cost-sharing for brand drug will be denoted as **
-	,case when coverage_level = '3'
-		then case cost_min_amt_pref when '*' then 'generic'
-									when '**' then 'brand'
-									else NULL
-				END
-		else null
-		end as cost_min_amt_pref
-	,cost_max_amt_pref
-	---- nonpref start
-	--Type of cost sharing at preferred pharmacies.
-	--0=not offered,
-	--1=copay
-	--2=coinsurance
-	,case cost_type_nonpref when '0' then 'not offered'
-		when '1' then 'copay'
-		when '2' then 'coinsurance'
-		else 'Not mapped:' || cost_type_nonpref
-		end as cost_type_nonpref
-	--Amount of cost sharing at preferred pharmacies. 
-	--If COST_TYPE_NONPREF=1, this field is interpreted as $$$$cc 
-	-- for example, 2.65 is interpreted as $2.65. 
-	--If COST_TYPE_PREF=2, this field is interpreted as a 2-decimal-place number 
-	-- for example, .25 is interpreted as 25%
-	,case cost_type_nonpref when '0' then -99 --Not offered
-		when '1' then cost_amt_nonpref
-		when '2' then cost_amt_nonpref
-		else -98 --Not mapped
-		end as cost_amt_nonpref
-	,case cost_type_nonpref when '1' then cost_amt_pref
-		else null
-		end as cost_amt_nonpref_dollar
-	,case cost_type_nonpref when '2' then cost_amt_pref
-		else null
-		end as cost_amt_nonpref_percent
-	--Minimum cost sharing at preferred pharmacies. 
-	--For COVERAGE_LEVEL=3 (catastrophic phase),  
-	--cost-sharing for generic drug will be denoted as *;
-	--cost-sharing for brand drug will be denoted as **
-	,case when coverage_level = '3'
-		then case cost_min_amt_nonpref when '*' then 'generic'
-									when '**' then 'brand'
-									else NULL
-				END
-		else null
-		end as cost_min_amt_nonpref
-	,cost_max_amt_nonpref
-	,b.*	
-	FROM stage_bcf_202210 b
-		inner join planInformation p
-			on b.CONTRACT_ID = p.contractId
-			and b.PLAN_ID = p.planId
-			and b.SEGMENT_ID = p.segmentId</sql><sql name="SQL 6">select * 
-	from planInformation
-select * from planInformationLocation where stateCode = 'MO'</sql><current_tab id="4"/></tab_sql></sqlb_project>
+drop table planInformation;
+drop table planInformationLocation;
+
+CREATE TABLE planInformation (
+	Id INTEGER PRIMARY KEY
+	,contractId char(5)
+	,planId char(3)
+	,segmentId char(3)
+	,contractName TEXT
+	,planName TEXT
+	,formularyId char(8)
+	,premium decimal(12,4)
+	,deductible decimal(12,4)
+	,icl decimal(12,4)
+	,snp char(1)
+	,pharmacyDataSupressed char(1)
+	);
+
+CREATE TABLE planInformationLocation (
+	planId INTEGER NOT NULL
+	,maRegionCode char(2)
+	,pdpRegionCode char(2)
+	,stateCode char(2)
+	,countyCode char(5)
+	);
+	
+insert into planInformation (
+	contractId
+	,planId
+	,segmentId
+	,contractName
+	,planName
+	,formularyId
+	,premium
+	,deductible
+	,icl
+    ,snp
+	,pharmacyDataSupressed
+	)
+select distinct 
+	CONTRACT_ID
+	,PLAN_ID
+	,SEGMENT_ID
+	,CONTRACT_NAME
+	,PLAN_NAME
+	,FORMULARY_ID
+	,PREMIUM
+	,DEDUCTIBLE
+	,ICL
+    ,SNP
+	,PLAN_SUPPRESSED_YN
+	from stage_pi_202210;
+	
+insert into planInformationLocation (
+	planId
+	, maRegionCode
+	, pdpRegionCode
+	, stateCode
+	, countyCode
+	)
+select p.id
+	,ps.MA_REGION_CODE
+	,ps.PDP_REGION_CODE
+	,ps.STATE
+	,ps.COUNTY_CODE
+	from stage_pi_202210 ps
+		inner join planInformation p
+			on ps.CONTRACT_ID = p.contractId
+			and ps.PLAN_ID = p.planId
+			and ps.SEGMENT_ID = p.segmentId;</sql><sql name="Basic Drug Formulary">-- Create the final table and translate the staged data for the formulary data.
+
+drop table basicDrugsFormulary;
+
+CREATE TABLE basicDrugsFormulary (
+	id INTEGER PRIMARY KEY,
+	formularyId VARCHAR(8),
+	formularyVersion VARCHAR(5),
+	contractYear INT(10),
+	rxcui VARCHAR(8),
+	ndc VARCHAR(11),
+	tierLevel INT(10),
+	quantityLimit DECIMAL(18,4),
+	quantityLimitDays DECIMAL(18,4),
+	quantityLimitExists char(1),
+	priorAuthorizationRequired char(1),
+	stepTherapy char(1)
+	);
+
+INSERT INTO basicDrugsFormulary
+(
+    FormularyId
+  , FormularyVersion
+  , ContractYear
+  , RXCUI
+  , NDC
+  , TierLevel
+  , QuantityLimit
+  , QuantityLimitDays
+  , QuantityLimitExists
+  , PriorAuthorizationRequired
+  , StepTherapy
+)
+SELECT bdf.FORMULARY_ID
+     , bdf.FORMULARY_VERSION
+     , bdf.CONTRACT_YEAR
+     , bdf.RXCUI
+     , bdf.NDC
+     , bdf.TIER_LEVEL_VALUE
+     , bdf.QUANTITY_LIMIT_YN
+     , bdf.QUANTITY_LIMIT_AMOUNT
+     , bdf.QUANTITY_LIMIT_DAYS
+     , bdf.PRIOR_AUTHORIZATION_YN
+     , bdf.STEP_THERAPY_YN 
+	FROM stage_bdf_202210 AS bdf;
+
+create index bdf_formularyId on basicDrugsFormulary(formularyId);	</sql><sql name="Beneficiary Cost">-- This is the most complicated of the files we will examine.
+-- Please refer to the data definition spreadsheet for details.
+
+create table beneficiarycost(
+	id Integer Primary Key,
+	planInformationId int,
+	contractId char(5),
+	planId char(3),
+	segmentId char(3),
+	coverageLevel varchar(25),
+	tier int,
+	daysSupply int,
+	costTypePref varchar(25),
+	costAmtPref numeric(18, 4),
+	costAmtPrefDollar numeric(18, 4),
+	costAmtPrefPercent numeric(18, 4),
+	costMinAmtPref varchar(12),
+	costMaxAmtPref numeric(18, 4),
+	costTypeNonpref varchar(25),
+	costAmtNonpref numeric(18, 4),
+	costAmtNonprefDollar numeric(18, 4),
+	costAmtNonprefPercent numeric(18, 4),
+	costMinAmtNonpref varchar(12),
+	costMaxAmtNonpref numeric(18, 4)
+	);
+	
+INSERT INTO beneficiarycost (
+	planInformationId,
+	contractId,
+	planId,
+	segmentId,
+	coverageLevel,
+	tier,
+	daysSupply,
+	costTypePref,
+	costAmtPref,
+	costAmtPrefDollar,
+	costAmtPrefPercent,
+	costMinAmtPref,
+	costMaxAmtPref,
+	costTypeNonpref,
+	costAmtNonpref,
+	costAmtNonprefDollar,
+	costAmtNonprefPercent,
+	costMinAmtNonpref,
+	costMaxAmtNonpref
+	)
+SELECT
+	p.id as planInformationId
+	--Coverage type for beneficiary with no subsidy.
+	--0=pre-deductible,
+	--1=initial coverage,
+	--2=coverage gap,
+	--3=catastrophic
+	,b.CONTRACT_ID
+	,b.PLAN_ID
+	,b.SEGMENT_ID
+	,case b.COVERAGE_LEVEL  when '0' then 'pre-deductible'
+		when '1' then 'initial coverage'
+			when '2' then 'coverage gap'
+			when '3' then 'catastrophic'
+			else 'Not mapped'
+			end as coverage_level
+	,tier
+	--Length of days supply to which cost structure applies.
+	--1=30 days,
+	--2=90 days,
+	--3=other,
+	--4=60 days
+	,case DAYS_SUPPLY when '1' then 30
+		when '2' then 90
+		when '3' then -1 -- This is other - can't calculate
+		when '4' then 60
+		else -2 -- This is unmapped
+		end as days_supply
+	--Type of cost sharing at preferred pharmacies.
+	--0=not offered,
+	--1=copay
+	--2=coinsurance
+	,case cost_type_pref when '0' then 'not offered'
+		when '1' then 'copay'
+		when '2' then 'coinsurance'
+		else 'Not mapped:' || cost_type_pref
+		end as cost_type_pref
+	--Amount of cost sharing at preferred pharmacies. 
+	--If COST_TYPE_PREF=1, this field is interpreted as $$$$cc 
+	-- for example, 2.65 is interpreted as $2.65. 
+	--If COST_TYPE_PREF=2, this field is interpreted as a 2-decimal-place number 
+	-- for example, .25 is interpreted as 25%
+	,case cost_type_pref when '0' then -99 --Not offered
+		when '1' then cost_amt_pref
+		when '2' then cost_amt_pref
+		else -98 --Not mapped
+		end as cost_amt_pref
+	,case cost_type_pref when '1' then cost_amt_pref
+		else null
+		end as cost_amt_pref_dollar
+	,case cost_type_pref when '2' then cost_amt_pref
+		else null
+		end as cost_amt_pref_percent
+	--Minimum cost sharing at preferred pharmacies. 
+	--For COVERAGE_LEVEL=3 (catastrophic phase),  
+	--cost-sharing for generic drug will be denoted as *;
+	--cost-sharing for brand drug will be denoted as **
+	,case when coverage_level = '3'
+		then case cost_min_amt_pref when '*' then 'generic'
+									when '**' then 'brand'
+									else NULL
+				END
+		else null
+		end as cost_min_amt_pref
+	,cost_max_amt_pref
+	---- nonpref start
+	--Type of cost sharing at preferred pharmacies.
+	--0=not offered,
+	--1=copay
+	--2=coinsurance
+	,case cost_type_nonpref when '0' then 'not offered'
+		when '1' then 'copay'
+		when '2' then 'coinsurance'
+		else 'Not mapped:' || cost_type_nonpref
+		end as cost_type_nonpref
+	--Amount of cost sharing at preferred pharmacies. 
+	--If COST_TYPE_NONPREF=1, this field is interpreted as $$$$cc 
+	-- for example, 2.65 is interpreted as $2.65. 
+	--If COST_TYPE_PREF=2, this field is interpreted as a 2-decimal-place number 
+	-- for example, .25 is interpreted as 25%
+	,case cost_type_nonpref when '0' then -99 --Not offered
+		when '1' then cost_amt_nonpref
+		when '2' then cost_amt_nonpref
+		else -98 --Not mapped
+		end as cost_amt_nonpref
+	,case cost_type_nonpref when '1' then cost_amt_pref
+		else null
+		end as cost_amt_nonpref_dollar
+	,case cost_type_nonpref when '2' then cost_amt_pref
+		else null
+		end as cost_amt_nonpref_percent
+	--Minimum cost sharing at preferred pharmacies. 
+	--For COVERAGE_LEVEL=3 (catastrophic phase),  
+	--cost-sharing for generic drug will be denoted as *;
+	--cost-sharing for brand drug will be denoted as **
+	,case when coverage_level = '3'
+		then case cost_min_amt_nonpref when '*' then 'generic'
+									when '**' then 'brand'
+									else NULL
+				END
+		else null
+		end as cost_min_amt_nonpref
+	,cost_max_amt_nonpref
+	FROM stage_bcf_202210 b
+		inner join planInformation p
+			on b.CONTRACT_ID = p.contractId
+			and b.PLAN_ID = p.planId
+			and b.SEGMENT_ID = p.segmentId</sql><sql name="ProductPackageNDC">-- This file will provide our drug names. 
+
+Drop table productPackageNDC;
+
+CREATE TABLE productPackageNDC (
+	id Integer primary key,
+	ndc11 char(11),
+	ProductId TEXT	,
+	ProductNDC char(10) 	,
+	ProprietaryName	TEXT,
+	NonProprietaryName TEXT	,
+	ActiveNumeratorStrength	varchar(20),
+	MarketingCategoryName varchar(50)	
+);
+
+Insert into productPackageNDC (
+	ndc11,
+	ProductId,
+	ProductNDC,
+	ProprietaryName,
+	NonProprietaryName,
+	ActiveNumeratorStrength,
+	MarketingCategoryName	
+	)
+	select * from stage_ProductPackageNDC</sql><sql name="Scratch Pad">create view lipitorPrice as 
+with cte_mo as (
+	select distinct planId from planInformationLocation where stateCode = 'MO')
+	select p.*, bdf.ndc, pp.NonProprietaryName
+		from planInformation p
+			inner join cte_mo m
+				on p.Id = m.planId
+			inner join basicDrugsFormulary bdf
+				on p.formularyId = bdf.formularyId
+			inner join productPackageNDC pp
+				on bdf.ndc = pp.ndc11
+		where pp.NonProprietaryName like 'Atorvastatin%'
+</sql><sql name="SQL 8">select * from lipitorPrice</sql><current_tab id="5"/></tab_sql></sqlb_project>
